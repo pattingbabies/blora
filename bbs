@@ -1,0 +1,83 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Broken Bones Simulator", "DarkTheme")
+
+local MainTab = Window:NewTab("Main")
+local CreditsTab = Window:NewTab("Credits")
+
+local MainSection = MainTab:NewSection("Money")
+local CreditsSection = CreditsTab:NewSection("Script Credits")
+
+MainSection:NewButton("Infinite Cash", "nil", function()
+    local args = {
+        [1] = {
+            ["Total"] = math.huge,
+            ["Bruises"] = 25.920457886835,
+            ["Fractures"] = 0,
+            ["Speed"] = 175.02900695801,
+            ["TestingNewInjury"] = 0,
+            ["Sprains"] = 14.22414317791,
+            ["Breaks"] = 0
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.Player_NewRun:FireServer(unpack(args))
+end)
+
+MainSection:NewButton("Get 500k Cash", "nil", function()
+    local args = {
+        [1] = {
+            ["Total"] = 500000,
+            ["Bruises"] = 25.920457886835,
+            ["Fractures"] = 0,
+            ["Speed"] = 175.02900695801,
+            ["TestingNewInjury"] = 0,
+            ["Sprains"] = 14.22414317791,
+            ["Breaks"] = 0
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.Player_NewRun:FireServer(unpack(args))
+end)
+
+MainSection:NewButton("Get 1M+ Cash", "nil", function()
+    local args = {
+        [1] = {
+            ["Total"] = 1000000,
+            ["Bruises"] = 25.920457886835,
+            ["Fractures"] = 0,
+            ["Speed"] = 175.02900695801,
+            ["TestingNewInjury"] = 0,
+            ["Sprains"] = 14.22414317791,
+            ["Breaks"] = 0
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.Player_NewRun:FireServer(unpack(args))
+end)
+
+MainSection:NewButton("Get 1B+ Cash", "nil", function()
+    local args = {
+        [1] = {
+            ["Total"] = 1000000000,
+            ["Bruises"] = 25.920457886835,
+            ["Fractures"] = 0,
+            ["Speed"] = 175.02900695801,
+            ["TestingNewInjury"] = 0,
+            ["Sprains"] = 14.22414317791,
+            ["Breaks"] = 0
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.Player_NewRun:FireServer(unpack(args))
+end)
+
+CreditsSection:NewButton("My Discord:  Blora#5650", "nil", function()
+    print("Blora was here!!")      
+    end)
+
+    CreditsSection:NewButton("Discord Server:  discord.gg/vDhatuGQzn", "nil", function()
+        print("Blora was here!!")      
+        end)
+        
+        
