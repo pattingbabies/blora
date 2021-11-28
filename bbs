@@ -6,7 +6,72 @@ local MainTab = Window:NewTab("Main")
 local CreditsTab = Window:NewTab("Credits")
 
 local MainSection = MainTab:NewSection("Money")
+local BreakSection = MainTab:NewSection("Bone Breaks")
 local CreditsSection = CreditsTab:NewSection("Script Credits")
+
+BreakSection:NewButton("Infinite Breaks", "nil", function()
+    local args = {
+        [1] = {
+            ["Total"] = 1,
+            ["Bruises"] = 25.920457886835,
+            ["Fractures"] = 0,
+            ["Speed"] = 175.02900695801,
+            ["TestingNewInjury"] = 0,
+            ["Sprains"] = 14.22414317791,
+            ["Breaks"] = math.huge
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.Player_NewRun:FireServer(unpack(args))
+end)
+
+BreakSection:NewButton("500K Breaks", "nil", function()
+    local args = {
+        [1] = {
+            ["Total"] = 1,
+            ["Bruises"] = 25.920457886835,
+            ["Fractures"] = 0,
+            ["Speed"] = 175.02900695801,
+            ["TestingNewInjury"] = 0,
+            ["Sprains"] = 14.22414317791,
+            ["Breaks"] = 500000
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.Player_NewRun:FireServer(unpack(args))
+end)
+
+BreakSection:NewButton("1M+ Breaks", "nil", function()
+    local args = {
+        [1] = {
+            ["Total"] = 1,
+            ["Bruises"] = 25.920457886835,
+            ["Fractures"] = 0,
+            ["Speed"] = 175.02900695801,
+            ["TestingNewInjury"] = 0,
+            ["Sprains"] = 14.22414317791,
+            ["Breaks"] = 10000000
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.Player_NewRun:FireServer(unpack(args))
+end)
+
+BreakSection:NewButton("1B+ Breaks", "nil", function()
+    local args = {
+        [1] = {
+            ["Total"] = 1,
+            ["Bruises"] = 25.920457886835,
+            ["Fractures"] = 0,
+            ["Speed"] = 175.02900695801,
+            ["TestingNewInjury"] = 0,
+            ["Sprains"] = 14.22414317791,
+            ["Breaks"] = 1000000000
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.Player_NewRun:FireServer(unpack(args))
+end)
 
 MainSection:NewButton("Infinite Cash", "nil", function()
     local args = {
