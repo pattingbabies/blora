@@ -1,0 +1,77 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Battle Of Hoth", "DarkTheme")
+
+-- Tabs
+
+local MainTab = Window:NewTab("Main")
+local CreditsTab = Window:NewTab("Credits")
+
+-- Sections
+
+local MainSection = MainTab:NewSection("Features")
+local CreditsSection = CreditsTab:NewSection("Script Credits")
+
+-- Main
+
+MainSection:NewButton("Crash Server", "Crashes Server You're currently in", function()
+    while true do
+        local args = {
+            [1] = "ThrowGrenade",
+            [2] = Vector3.new(-1086.9680175781, 903.13177490234, -3254.2548828125),
+            [3] = Vector3.new(36.611614227295, 33.692600250244, 106.44551086426),
+            [4] = "Gas Grenade",
+            [5] = 1
+        }
+        
+        game:GetService("ReplicatedStorage").RemoteEvents.GrenadeThrow:FireServer(unpack(args))
+        task.wait()
+        end
+end)
+
+MainSection:NewTextBox("Kill Player", "Kills selected user", function(v)
+    local target = v
+    local targetname = game:GetService("Players")[target].Character
+    
+    local args = {
+        [1] = "DamageSingle",
+        [2] = "Player",
+        [3] = targetname,
+        [4] = 100,
+        [5] = ""
+    }
+    
+    game:GetService("ReplicatedStorage").RemoteEvents.GunEvents:FireServer(unpack(args)) 
+    
+end)
+
+MainSection:NewButton("Kill All Players(Works, but will kick you!)", "Kills all players in your server", function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+
+        for i,v in pairs(game.Players:GetPlayers()) do
+             if v.Name == game.Players.LocalPlayer.Name then
+                 else
+        local args = {
+           [1] = "DamageSingle",
+           [2] = "Player",
+           [3] = game:GetService("Players")[v.Name].Character,
+           [4] = 100,
+           [5] = ""
+        }
+        
+        game:GetService("ReplicatedStorage").RemoteEvents.GunEvents:FireServer(unpack(args))
+        
+        end end end)
+end)
+
+
+-- Credits
+
+CreditsSection:NewButton("My Discord:  Blora#5650", "nil", function()
+    print("Blora was here!!")      
+    end)
+
+    CreditsSection:NewButton("Discord Server:  discord.gg/vDhatuGQzn", "nil", function()
+        print("Blora was here!!")      
+        end)
+        
+        
